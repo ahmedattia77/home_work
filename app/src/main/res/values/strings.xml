@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Home Work</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="refresh">Refresh</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="enter_to_your_personal_profile_com_and_follow">Enter to your personal profile and follow.</string>
+    <string name="password">Password</string>
+    <string name="sign_up"><u> Sign Up</u></string>
+    <string name="sing_up_">Sign Up</string>
+    <string name="create_your_personal_profile_com_and_follow">Create your personal profile and follow.</string>
+    <string name="email">Email</string>
+    <string name="city">City</string>
+    <string name="by_signing_up">By signing up, you agree to the<font color='#277EFF'> Terms of Service and Privacy Policy</font></string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="don_t_have_an_account_yet">Don’t have an account yet?</string>
+
+</resources>

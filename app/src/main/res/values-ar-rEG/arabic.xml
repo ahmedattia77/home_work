@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Home Work</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="refresh">تحديث</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="enter_to_your_personal_profile_com_and_follow">ادخل بيانات الحساب</string>
+    <string name="create_your_personal_profile_com_and_follow">انشاء حسابك الشخصي</string>
+    <string name="password">الرقم السري</string>
+    <string name="sign_up"><u> انشاء حساب</u></string>
+    <string name="sing_up_">انشاء حساب</string>
+    <string name="email">البريد الاكتروني</string>
+    <string name="city">المدينة</string>
+    <string name="by_signing_up">عند انشاء حساب فإنه يتضمن<font color='#277EFF'> الموافقة علي سياساتنا المتبعة</font></string>
+    <string name="already_have_an_account">هل لديك حساب بالفعل ؟</string>
+    <string name="don_t_have_an_account_yet">ليس لديك حساب بعد ؟</string>
+</resources>
