@@ -2,22 +2,26 @@ package com.example.homework.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.homework.databinding.ActivityLoginBinding
+import com.example.homework.databinding.ActivitySignUpBinding
 
-private lateinit var binding: ActivityLoginBinding
+class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
-class LoginActivity : BaseActivity() {
+    override val bindingInflater: (LayoutInflater) -> ActivityLoginBinding = ActivityLoginBinding::inflate
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        initialEvents()
-
+        setUp()
     }
 
-    override fun initialEvents (){
+    override fun setUp() {
+        addCallBacks()
+    }
+
+    override fun addCallBacks (){
         binding.loginBt.setOnClickListener {
 
             if (checkFields())
@@ -34,15 +38,15 @@ class LoginActivity : BaseActivity() {
         var password = binding.passwordEt.text.toString()
 
         if (phone.isEmpty() || phone.length < 11){
-            Toast.makeText(this, "PLS Enter Valued Phone Number", Toast.LENGTH_SHORT).show()
+            this.toast("PLS Enter Valued Phone Number")
             return false
         }
         else if (password.length < 8){
-            Toast.makeText(this, "PLS Enter 8 char of password", Toast.LENGTH_SHORT).show()
+            this.toast("PLS Enter 8 char of password")
             return false
         }
 
-        Toast.makeText(this, "Login successfully", Toast.LENGTH_SHORT).show()
+        this.toast("Login successfully")
 
         return true
     }

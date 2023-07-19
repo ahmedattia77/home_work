@@ -1,27 +1,28 @@
 package com.example.homework.ui
 
+
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.view.LayoutInflater
 import com.example.homework.databinding.ActivitySignUpBinding
 import java.util.regex.Pattern
 
 
-private lateinit var binding: ActivitySignUpBinding
 
-class SignUpActivity : BaseActivity() {
+class SignUpActivity() : BaseActivity<ActivitySignUpBinding>() {
 
+    override val bindingInflater: (LayoutInflater) -> ActivitySignUpBinding = ActivitySignUpBinding::inflate
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignUpBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        initialEvents()
-
+        setUp()
     }
 
-    override fun initialEvents (){
+    override fun setUp(){
+        addCallBacks()
+    }
+
+    override fun addCallBacks (){
         binding.signBt.setOnClickListener {
             if (checkFields())
                 startActivity(Intent(this, MainActivity::class.java))
@@ -41,16 +42,16 @@ class SignUpActivity : BaseActivity() {
         var password = binding.passwordEt.text.toString()
 
         if (phone.isEmpty() || phone.length < 11){
-            Toast.makeText(this, "PLS Enter Valid Phone Number", Toast.LENGTH_SHORT).show()
+            this.toast("PLS Enter Valid Phone Number")
             return false
         }
         else if (password.length < 8){
-            Toast.makeText(this, "PLS Enter 8 char of password", Toast.LENGTH_SHORT).show()
+            this.toast("PLS Enter 8 char of password")
             return false
         }
 
         else if (city.isEmpty()){
-            Toast.makeText(this, "PLS Enter City", Toast.LENGTH_SHORT).show()
+            this.toast("PLS Enter City")
             return false
         }
 
@@ -59,16 +60,16 @@ class SignUpActivity : BaseActivity() {
         )
 
         if (!emailPatter.matcher(email).matches()){
-            Toast.makeText(this, "PLS Enter valid Email", Toast.LENGTH_SHORT).show()
+            this.toast("PLS Enter valid Email")
             return false
         }
 
         if (!binding.checkbox.isChecked){
-            Toast.makeText(this, "Make sure you that agree with our policy", Toast.LENGTH_SHORT).show()
+            this.toast("Make sure you that agree with our policy")
             return false
         }
 
-        Toast.makeText(this, "Welcome to our Application we're coming soon :)", Toast.LENGTH_SHORT).show()
+        this.toast("Welcome to our Application we're coming soon :)")
 
         return true
     }
